@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MellowMoon — Ayurvedic Period Relief & Skincare</title>
+  <meta name="description" content="Mellow the Pain. Embrace Your Moon. Ayurvedic period pain relief cream and natural skincare. 100% natural, toxin-free, fast-absorbing formulas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1c1c1c;
+      --muted: #6b7280;
+      --brand: #2d6a4f;
+      --brand-light: rgba(45, 106, 79, 0.1);
+      --brand-2: #95d5b2;
+      --accent: #ff7a59;
+      --card: #f8fafc;
+      --border: #e5e7eb;
+      --star: #fbbf24;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.12);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    img {
+      max-width: 100%;
+      display: block;
+      height: auto;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    
+    .container {
+      width: min(1200px, 92%);
+      margin-inline: auto;
+    }
+    
+    /* Header - Sexy Redesign */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: saturate(180%) blur(10px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+      transition: var(--transition);
+    }
+    
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+    
+    .logo:hover {
+      transform: translateY(-2px);
+    }
+    
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .logo:hover .logo-mark {
+      transform: rotate(10deg);
+    }
+    
+    nav ul {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav a {
+      font-weight: 500;
+      position: relative;
+      padding: 8px 0;
+      transition: var(--transition);
+    }
+    
+    nav a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--brand);
+      transition: var(--transition);
+    }
+    
+    nav a:hover {
+      color: var(--brand);
+    }
+    
+    nav a:hover:after {
+      width: 100%;
+    }
+    
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: var(--transition);
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .btn:hover:before {
+      left: 100%;
+    }
+    
+    .btn.primary {
+      background: var(--brand);
+      border-color: var(--brand);
+      color: #fff;
+    }
+    
+    .btn.ghost {
+      background: #fff;
+    }
+    
+    .btn.ghost:hover {
+      background: var(--brand-light);
+      color: var(--brand);
+    }
+    
+    /* Mobile nav */
+    .hamburger {
+      display: none;
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: #fff;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .hamburger:hover {
+      background: var(--brand-light);
+      color: var(--brand);
+    }
+    
+    #mobileMenu {
+      display: none;
+      border-top: 1px solid var(--border);
+      padding: 16px 0;
+      background: #fff;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    #mobileMenu a {
+      display: block;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--border);
+      transition: var(--transition);
+    }
+    
+    #mobileMenu a:hover {
+      color: var(--brand);
+      padding-left: 10px;
+    }
+    
+    @media (max-width: 900px) {
+      nav ul {
+        display: none;
+      }
+      
+      .hamburger {
+        display: inline-flex;
+      }
+      
+      #mobileMenu {
+        display: block;
+      }
+      
+      .nav-cta {
+        display: none;
+      }
+    }
+    
+    /* Hero - Sexy Redesign */
+    .hero {
+      position: relative;
+      isolation: isolate;
+      padding: 80px 0;
+      background: linear-gradient(135deg, rgba(249, 250, 251, 0.8) 0%, rgba(249, 250, 251, 0.4) 100%);
+      overflow: hidden;
+    }
+    
+    .hero .inner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    .eyebrow {
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brand);
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      line-height: 1.15;
+      margin: 10px 0 20px;
+    }
+    
+    .lead {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    
+    .hero-cta {
+      display: flex;
+      gap: 16px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    
+    .hero-image-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .hero img {
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      transform: perspective(1000px) rotateY(-10deg);
+      width: 100%;
+      height: auto;
+    }
+    
+    .hero img:hover {
+      transform: perspective(1000px) rotateY(0);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .bg-badge {
+      position: absolute;
+      inset: auto -5% -18% auto;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(closest-side, var(--brand-2), transparent 70%);
+      filter: blur(20px);
+      z-index: -1;
+      opacity: 0.4;
+      animation: pulse 8s infinite alternate;
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.4;
+      }
+      100% {
+        transform: scale(1.1);
+        opacity: 0.6;
+      }
+    }
+    
+    @media (max-width: 900px) {
+      .hero .inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+      }
+      
+      .bg-badge {
+        display: none;
+      }
+      
+      .hero-cta {
+        justify-content: center;
+      }
+    }
+    
+    /* USP strip */
+    .usp {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin: 40px 0 10px;
+    }
+    
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      padding: 16px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      transition: var(--transition);
+      cursor: default;
+    }
+    
+    .chip:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--brand);
+    }
+    
+    .chip i {
+      font-style: normal;
+      color: var(--brand);
+      font-weight: 700;
+    }
+    
+    @media (max-width: 900px) {
+      .usp {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 500px) {
+      .usp {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Section */
+    section {
+      padding: 80px 0;
+    }
+    
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      gap: 20px;
+    }
+    
+    .section-head h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      margin: 0;
+    }
+    
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+    
+    @media (max-width: 768px) {
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+    
+    /* Product grid - Sexy Redesign */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+    
+    @media (max-width: 1100px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    @media (max-width: 780px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 520px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--brand);
+    }
+    
+    .card .img-wrap {
+      aspect-ratio: 4/3;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .card .img-wrap:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.05) 100%);
+      opacity: 0;
+      transition: var(--transition);
+      z-index: 1;
+    }
+    
+    .card:hover .img-wrap:before {
+      opacity: 1;
+    }
+    
+    .card .img-wrap img {
+      transition: var(--transition);
+      transform: scale(1);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .card:hover .img-wrap img {
+      transform: scale(1.05);
+    }
+    
+    .card .content {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .price {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--brand);
+    }
+    
+    .stars {
+      display: flex;
+      gap: 2px;
+    }
+    
+    .stars i {
+      color: var(--star);
+    }
+    
+    .card .cta {
+      margin: 16px 0 0;
+    }
+    
+    /* Split banner */
+    .split {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+    
+    .split .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 32px;
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+    
+    .split .panel:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-5px);
+    }
+    
+    .split-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .split-image img {
+      border-radius: var(--radius);
+      width: 100%;
+      height: auto;
+      box-shadow: var(--shadow);
+    }
+    
+    @media (max-width: 900px) {
+      .split {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .split-image {
+        order: -1;
+      }
+    }
+    
+    /* Testimonial */
+    .testi {
+      background: linear-gradient(180deg, #f6fff9, #ffffff);
+    }
+    
+    .quote {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      display: grid;
+      gap: 16px;
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .quote:before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 60px;
+      font-family: 'Playfair Display', serif;
+      color: var(--brand-light);
+      line-height: 1;
+    }
+    
+    .quote:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-5px);
+    }
+    
+    /* Feature list */
+    .kicker {
+      color: var(--brand);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    
+    .list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin: 24px 0;
+    }
+    
+    .li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: var(--radius);
+      transition: var(--transition);
+    }
+    
+    .li:hover {
+      transform: translateX(5px);
+      border-color: var(--brand);
+    }
+    
+    .li i {
+      color: var(--brand);
+      font-style: normal;
+      font-weight: 700;
+    }
+    
+    @media (max-width: 780px) {
+      .list {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Accordion */
+    .faq {
+      display: grid;
+      gap: 16px;
+    }
+    
+    details {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      transition: var(--transition);
+    }
+    
+    details:hover {
+      border-color: var(--brand);
+    }
+    
+    details[open] {
+      box-shadow: var(--shadow);
+    }
+    
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      position: relative;
+      padding-right: 30px;
+      list-style: none;
+    }
+    
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    summary:after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-weight: 400;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+    
+    details[open] summary:after {
+      content: '-';
+    }
+    
+    /* Footer */
+    footer {
+      background: #0b0f0d;
+      color: #e6f1ec;
+      margin-top: 80px;
+    }
+    
+    .foot {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, 1fr);
+      gap: 40px;
+      padding: 60px 0;
+    }
+    
+    .foot a {
+      color: #cfe6dc;
+      transition: var(--transition);
+    }
+    
+    .foot a:hover {
+      color: #fff;
+      padding-left: 5px;
+    }
+    
+    .foot .logo-mark {
+      background: linear-gradient(135deg, #3a7d5e, #9bdab9);
+    }
+    
+    .foot small {
+      color: #9fb7ad;
+    }
+    
+    @media (max-width: 900px) {
+      .foot {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+    }
+    
+    @media (max-width: 560px) {
+      .foot {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Utilities */
+    .muted {
+      color: var(--muted);
+    }
+    
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      background: #fff;
+      transition: var(--transition);
+    }
+    
+    .badge:hover {
+      background: var(--brand-light);
+      border-color: var(--brand);
+    }
+    
+    .sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+    
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 16px;
+      border-radius: 50px;
+      background: var(--brand-2);
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    
+    .center {
+      text-align: center;
+    }
+    
+    /* New sexy elements */
+    .floating-shape {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand-2), transparent 70%);
+      filter: blur(40px);
+      opacity: 0.3;
+      z-index: -1;
+      animation: float 15s infinite alternate ease-in-out;
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+      50% {
+        transform: translate(30px, 30px) rotate(90deg);
+      }
+      100% {
+        transform: translate(-20px, 40px) rotate(180deg);
+      }
+    }
+    
+    .shape-1 {
+      top: 20%;
+      left: 5%;
+      width: 300px;
+      height: 300px;
+      animation-duration: 20s;
+    }
+    
+    .shape-2 {
+      bottom: 10%;
+      right: 10%;
+      width: 250px;
+      height: 250px;
+      animation-duration: 25s;
+      animation-delay: 2s;
+    }
+    
+    /* Add to cart animation */
+    @keyframes addToCart {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    
+    .btn-cart {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-cart:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%);
+      transform-origin: 50% 50%;
+    }
+    
+    .btn-cart:focus:not(:active)::after {
+      animation: ripple 1s ease-out;
+    }
+    
+    @keyframes ripple {
+      0% {
+        transform: scale(0, 0);
+        opacity: 1;
+      }
+      20% {
+        transform: scale(50, 50);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(100, 100);
+        opacity: 0;
+      }
+    }
+    
+    /* Loading animation for buttons */
+    .btn-loading {
+      position: relative;
+      color: transparent !important;
+    }
+    
+    .btn-loading:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      border: 2px solid transparent;
+      border-top-color: #ffffff;
+      border-radius: 50%;
+      animation: button-loading-spinner 1s ease infinite;
+    }
+    
+    @keyframes button-loading-spinner {
+      from {
+        transform: rotate(0turn);
+      }
+      to {
+        transform: rotate(1turn);
+      }
+    }
+    
+    /* Image fallback styling */
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      /* background: linear-gradient(135deg, var(--brand-light), var(--card)); */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--brand);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating background shapes -->
+  <div class="floating-shape shape-1"></div>
+  <div class="floating-shape shape-2"></div>
+
+  <!-- Header / Nav -->
+  <header>
+    <div class="container nav">
+      <a href="#home" class="logo" aria-label="MellowMoon Home">
+        <span class="logo-mark">MM</span>
+        <span>MellowMoon</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#educate">Educate Yourself</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="#cart" class="btn ghost" aria-label="View Cart">
+          <i class="fas fa-shopping-cart"></i> Cart
+        </a>
+        <a href="#login" class="btn primary" aria-label="Login or Signup">Login / Signup</a>
+      </div>
+      <button class="hamburger" aria-label="Open Menu" onclick="toggleMenu()">☰</button>
+    </div>
+    <div id="mobileMenu" class="container" aria-label="Mobile Menu" hidden>
+      <a href="#home" onclick="toggleMenu()">Home</a>
+      <a href="#about" onclick="toggleMenu()">About</a>
+      <a href="#products" onclick="toggleMenu()">Products</a>
+      <a href="#educate" onclick="toggleMenu()">Educate Yourself</a>
+      <a href="#contact" onclick="toggleMenu()">Contact</a>
+      <div style="display:flex;gap:10px;padding-top:10px">
+        <a href="#cart" class="btn ghost" onclick="toggleMenu()">Cart</a>
+        <a href="#login" class="btn primary" onclick="toggleMenu()">Login / Signup</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home" class="hero">
+    <div class="container inner">
+      <div>
+        <div class="eyebrow">Your Body Knows. Ayurveda Listens.</div>
+        <h1>Mellow the Pain. Embrace Your Moon.</h1>
+        <p class="lead">A luxurious Ayurvedic cream that transforms period pain into a moment of calm, care, and connection with your body.</p>
+        <div class="hero-cta">
+          <a href="#about" class="btn primary">Know more</a>
+          <a href="#products" class="btn ghost">Shop Best Sellers</a>
+        </div>
+        <div class="usp" aria-label="Brand USPs">
+          <div class="chip"><i>✓</i> 100% Natural & Ayurvedic</div>
+          <div class="chip"><i>✓</i> Fast‑absorbing & Non‑greasy</div>
+          <div class="chip"><i>✓</i> Healing Essential Oils</div>
+          <div class="chip"><i>✓</i> Toxin‑free, No Parabens</div>
+        </div>
+      </div>
+      <div class="hero-image-container">
+        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1400&auto=format&fit=crop" alt="Calming self‑care ritual with cream" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="image-placeholder" style="display: none;">
+          <div>MellowMoon Product Image</div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-badge" aria-hidden="true"></div>
+  </main>
+
+  <!-- Best Sellers -->
+  <section id="products" aria-labelledby="best-sellers">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow" id="best-sellers">Best Sellers</div>
+          <h2>No Makeup Essentials</h2>
+          <p class="muted">Save on Sets</p>
+        </div>
+        <a href="#" class="btn">View all</a>
+      </div>
+
+      <div class="grid" role="list">
+        <!-- Mellow Moon Cream -->
+        <article class="card" role="listitem">
+          <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?q=80&w=1200&auto=format&fit=crop" alt="Mellow Moon Period Pain Relief Cream" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="image-placeholder" style="display: none;">
+              <div>Mellow Moon Cream</div>
+            </div>
+          </div>
+          <div class="content">
+            <div class="pill" aria-label="Product category">Mellow Moon Cream</div>
+            <h3 style="margin:10px 0 6px">Mellow Moon Period Pain Relief Cream</h3>
+            <p class="muted">Ayurvedic blend for fast, natural relief from cramps and discomfort.</p>
+            <div class="rating"><span class="price">₹499</span><span class="stars" aria-label="5 stars">★★★★★</span></div>
+            <div class="cta"><a class="btn primary btn-cart" href="#cart">Add to Cart</a></div>
+          </div>
+        </article>
+
+        <!-- Glow+ Oil -->
+        <article class="card" role="listitem">
+          <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1585238342020-96629c05a2ad?q=80&w=1200&auto=format&fit=crop" alt="Glow+ Face Oil bottle" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="image-placeholder" style="display: none;">
+              <div>Glow+ Face Oil</div>
+            </div>
+          </div>
+          <div class="content">
+            <div class="pill">Glow+ Oil</div>
+            <h3 style="margin:10px 0 6px">Glow+ Face Oil</h3>
+            <p class="muted">Nourishing oil for radiant, hydrated skin all day long.</p>
+            <div class="rating"><span class="price">₹599</span><span class="stars" aria-label="5 stars">★★★★★</span></div>
+            <div class="cta"><a class="btn primary btn-cart" href="#cart">Add to Cart</a></div>
+          </div>
+        </article>
+
+        <!-- Gold Glow Serum -->
+        <article class="card" role="listitem">
+          <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=1200&auto=format&fit=crop" alt="Gold Glow Serum" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="image-placeholder" style="display: none;">
+              <div>Gold Glow Serum</div>
+            </div>
+          </div>
+          <div class="content">
+            <div class="pill">Gold Glow Serum</div>
+            <h3 style="margin:10px 0 6px">Gold Glow Serum</h3>
+            <p class="muted">Brightens and evens skin tone with natural botanicals.</p>
+            <div class="rating"><span class="price">₹699</span><span class="stars" aria-label="5 stars">★★★★★</span></div>
+            <div class="cta"><a class="btn primary btn-cart" href="#cart">Add to Cart</a></div>
+          </div>
+        </article>
+
+        <!-- Essence Boost -->
+        <article class="card" role="listitem">
+          <div class="img-wrap">
+            <img src="https://images.unsplash.com/photo-1611930021653-7f2e9e1fddfa?q=80&w=1200&auto=format&fit=crop" alt="Essence Boost Moisturizer" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="image-placeholder" style="display: none;">
+              <div>Essence Boost Moisturizer</div>
+            </div>
+          </div>
+          <div class="content">
+            <div class="pill">Essence Boost</div>
+            <h3 style="margin:10px 0 6px">Essence Boost Moisturizer</h3>
+            <p class="muted">Lightweight hydration for soft, supple skin.</p>
+            <div class="rating"><span class="price">₹399</span><span class="stars" aria-label="5 stars">★★★★★</span></div>
+            <div class="cta"><a class="btn primary btn-cart" href="#cart">Add to Cart</a></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="center" style="margin-top:32px">
+        <p class="muted" style="margin:6px 0">Not sure where to start?</p>
+        <a href="#quiz" class="btn">Take the Quiz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Brand Story Split -->
+  <section id="about">
+    <div class="container split">
+      <div class="panel">
+        <div class="kicker">Your Body Knows. Ayurveda Listens.</div>
+        <h2>There's wisdom in your body — a rhythm, a signal, a whisper.</h2>
+        <p class="muted">MellowMoon listens. Infused with time‑honored Ayurvedic ingredients, our cream is designed to ease cramps and soothe tension — naturally, gently, beautifully.</p>
+        <div class="list" role="list">
+          <div class="li" role="listitem"><i>✓</i> 100% Natural & Ayurvedic ingredients</div>
+          <div class="li" role="listitem"><i>✓</i> Fast‑absorbing, non‑greasy & discreet formula</div>
+          <div class="li" role="listitem"><i>✓</i> Enriched with healing essential oils</div>
+          <div class="li" role="listitem"><i>✓</i> Free from toxins, parabens & synthetic fragrance</div>
+        </div>
+        <a href="#products" class="btn primary">Buy Now</a>
+      </div>
+      <div class="split-image">
+        <img src="https://images.unsplash.com/photo-1608571427524-5b7b6f3b06fc?q=80&w=1400&auto=format&fit=crop" alt="Ayurvedic herbs and oils" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="image-placeholder" style="display: none;">
+
+                <img src="https://www.thermofisher.com/blog/behindthebench/wp-content/uploads/sites/9/2016/01/Ayurveda-making-400x267.jpg" alt="Ayurvedic Ingredients">
+          <!-- <div>Ayurvedic Ingredients</div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Focus / Ritual -->
+  <section>
+    <div class="container split">
+      <div class="split-image">
+        <img src="https://images.unsplash.com/photo-1604882357865-c993ac1c6a86?q=80&w=1400&auto=format&fit=crop" alt="Mellow Moon Period Pain Relief Cream tube" style="border-radius:20px;border:1px solid var(--border)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="image-placeholder" style="display: none; border-radius: 20px;">
+            <img src="https://mellowmoon.in/img/Product%20Images/Citrus_50.png" alt="Mellow Moon Cream">
+          <!-- <div>Mellow Moon Cream</div> -->
+        </div>
+      </div>
+      <div class="panel">
+        <div class="kicker">Mellow Moon Period Pain Relief Cream</div>
+        <h2>This Isn't Just Relief. It's a Ritual.</h2>
+        <p class="muted">Imagine this: You're cramping, restless, tired. You reach for Mellow Moon. With each massage, your muscles melt. The gentle aroma quiets your thoughts. You take a deep breath, and your body softens. This is not just pain relief. This is reclaiming peace during your period. This is a reminder that your cycle is sacred, not something to suffer through.</p>
+        <div class="list">
+          <div class="li"><i>•</i> Melts away cramps and muscular tension</div>
+          <div class="li"><i>•</i> Calms inflammation</div>
+          <div class="li"><i>•</i> Encourages relaxation through soft, natural aromatherapy</div>
+          <div class="li"><i>•</i> Offers relief within 10–15 minutes</div>
+        </div>
+        <p class="muted">50g | Ayurvedic | Natural — Small enough to slip in your bag. Powerful enough to change your day.</p>
+        <a href="#cart" class="btn primary">Add to Cart</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ingredients -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>The Plant‑Based Power Within</h2>
+        <p class="muted">Thoughtfully chosen, beautifully balanced.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><div class="content"><h3>Lavender Oil</h3><p class="muted">Eases stress, anxiety, and promotes deep calm.</p></div></div>
+        <div class="card"><div class="content"><h3>Peppermint Oil</h3><p class="muted">Cools, refreshes, and reduces spasms.</p></div></div>
+        <div class="card"><div class="content"><h3>Eucalyptus Oil</h3><p class="muted">Clears fatigue and releases deep pain.</p></div></div>
+        <div class="card"><div class="content"><h3>Ajwain Oil</h3><p class="muted">Ayurvedic antispasmodic to relax uterine muscles.</p></div></div>
+        <div class="card"><div class="content"><h3>Dashmool Extract</h3><p class="muted">A sacred 10‑root blend known to balance reproductive health.</p></div></div>
+        <div class="card"><div class="content"><h3>Sesame Oil</h3><p class="muted">A warm, nourishing base that delivers herbs deep into the skin.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testi" aria-labelledby="testi">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow" id="testi">What Our Customers Say</div>
+          <h2>Real relief. Real stories.</h2>
+        </div>
+      </div>
+      <div class="quote">
+        <div style="display:flex;align-items:center;gap:10px"><strong>Ayesha Khan</strong> <span class="stars" aria-label="5 stars">★★★★★</span></div>
+        <p>"I was skeptical at first, but this cream really works! No stains, no harsh smell, and it fits right in my bag. My period days are so much easier now."</p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span class="badge">Mellow Moon Cream</span>
+          <a class="btn" href="#products">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Educate Yourself -->
+  <section id="educate">
+    <div class="container split">
+      <div class="panel">
+        <div class="kicker">Educate Yourself</div>
+        <h2>Your New Moon Ritual</h2>
+        <ol class="muted" style="padding-left:18px">
+          <li><strong>Massage.</strong> Apply a small amount to your lower belly, lower back, or thighs.</li>
+          <li><strong>Melt.</strong> Let the oils seep in. Feel the tension loosen.</li>
+          <li><strong>Breathe.</strong> Inhale the calming aroma. Let it ground you.</li>
+        </ol>
+        <p class="muted">Use during cramps, PMS, or any time your body asks for kindness.</p>
+      </div>
+      <div class="panel">
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq">
+          <details>
+            <summary>Is Mellow Moon cream safe for teens?</summary>
+            <p>Yes! It's gentle, natural, and ideal for young bodies too.</p>
+          </details>
+          <details>
+            <summary>Will it stain my clothes?</summary>
+            <p>Not at all. The cream absorbs quickly and leaves no residue.</p>
+          </details>
+          <details>
+            <summary>How fast does it work?</summary>
+            <p>Most users feel relief within 10–15 minutes.</p>
+          </details>
+          <details>
+            <summary>Can I use it with my medication or heating pad?</summary>
+            <p>Absolutely — it works well as a companion to your current routine.</p>
+          </details>
+          <details>
+            <summary>Does it have a strong smell?</summary>
+            <p>No — it has a soft, soothing aroma, like a mini spa for your senses.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container split">
+      <div class="panel">
+        <div class="kicker">Get in touch</div>
+        <h2>MellowMoon</h2>
+        <p class="muted">005,006 - Jay Vijay Nagar, Bldg no 4, Opposite 7 Square Academy, Naigaon East 401208</p>
+        <p><a href="tel:+911234567890">+012 345 67890</a><br>
+        <a href="mailto:care@mellowmoon.in">care@mellowmoon.in</a></p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="#"><i class="fab fa-instagram"></i> Instagram</a>
+          <a class="btn" href="#"><i class="fab fa-youtube"></i> YouTube</a>
+          <a class="btn" href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Quick Contact Form</h3>
+        <form onsubmit="event.preventDefault(); showFormSuccess();">
+          <label for="name" class="sr">Name</label>
+          <input id="name" name="name" required placeholder="Your name" style="width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:12px;margin-bottom:10px">
+
+          <label for="email" class="sr">Email</label>
+          <input id="email" name="email" type="email" required placeholder="Email" style="width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:12px;margin-bottom:10px">
+
+          <label for="msg" class="sr">Message</label>
+          <textarea id="msg" name="message" rows="4" placeholder="Write your message..." style="width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:12px;margin-bottom:10px"></textarea>
+
+          <button class="btn primary" type="submit" id="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container foot">
+      <div>
+        <a href="#home" class="logo" style="color:#e6f1ec">
+          <span class="logo-mark">MM</span>
+          <span style="font-weight:800">MellowMoon</span>
+        </a>
+        <p class="muted" style="margin-top:10px">Designed for calm, comfort, and care.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <nav aria-label="Quick Links">
+          <a href="#home">Home</a><br>
+          <a href="#about">About Us</a><br>
+          <a href="#products">Our Products</a><br>
+          <a href="#educate">FAQs</a><br>
+          <a href="#contact">Contact Us</a>
+        </nav>
+      </div>
+      <div>
+        <h4>Shop & Info</h4>
+        <nav aria-label="Shop">
+          <a href="#cart">Cart</a><br>
+          <a href="#login">Register</a><br>
+          <a href="#login">Login</a><br>
+          <a href="#">Privacy Policy</a><br>
+          <a href="#">Terms & Conditions</a>
+        </nav>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <p class="muted">Get rituals, offers, and Ayurvedic tips.</p>
+        <form onsubmit="event.preventDefault(); showNewsletterSuccess();">
+          <label for="nl" class="sr">Email</label>
+          <input id="nl" type="email" required placeholder="Enter your email" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:10px;margin-bottom:8px">
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="container" style="padding:0 0 26px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <small>© 2025 Mellowmoon. All Rights Reserved.</small>
+      <small>Designed by ChoreDigital Communication LLP</small>
+    </div>
+  </footer>
+
+  <script>
+    // Accessible mobile menu toggle
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const hidden = menu.hasAttribute('hidden');
+      if (hidden) { 
+        menu.removeAttribute('hidden'); 
+      } else { 
+        menu.setAttribute('hidden',''); 
+      }
+    }
+
+    // Replace text stars with icons for better accessibility
+    document.querySelectorAll('.stars').forEach(s => { 
+      s.innerHTML = '★'.repeat(5); 
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({behavior: 'smooth'});
+        }
+      });
+    });
+
+    // Add to cart animation
+    document.querySelectorAll('.btn-cart').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.classList.add('btn-loading');
+        
+        // Simulate loading
+        setTimeout(() => {
+          this.classList.remove('btn-loading');
+          this.innerHTML = 'Added to Cart <i class="fas fa-check"></i>';
+          
+          // Revert after 2 seconds
+          setTimeout(() => {
+            this.innerHTML = 'Add to Cart';
+          }, 2000);
+        }, 1000);
+      });
+    });
+
+    // Form submission animation
+    function showFormSuccess() {
+      const btn = document.getElementById('submit-btn');
+      const originalText = btn.innerHTML;
+      
+      btn.classList.add('btn-loading');
+      
+      setTimeout(() => {
+        btn.classList.remove('btn-loading');
+        btn.innerHTML = 'Message Sent <i class="fas fa-check"></i>';
+        
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          alert('Thanks! We\'ll reach out soon.');
+        }, 2000);
+      }, 1500);
+    }
+    
+    function showNewsletterSuccess() {
+      alert('Subscribed! Thank you for joining our newsletter.');
+    }
+
+    // Add subtle animations on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const elementsToAnimate = document.querySelectorAll('.card, .panel, .chip, .quote');
+      elementsToAnimate.forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(el);
+      });
+    });
+
+    // Image error handling
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        img.onerror = function() {
+          this.style.display = 'none';
+          const placeholder = this.nextElementSibling;
+          if (placeholder && placeholder.classList.contains('image-placeholder')) {
+            placeholder.style.display = 'flex';
+          }
+        };
+      });
+    });
+  </script>
+</body>
+</html>
